@@ -1,0 +1,64 @@
+{
+   "IoTDevice1" : {
+      "DeviceName" : "smart refrigerators",
+      "use" : "It lets the users use their smartphone to see what's inside",
+      "PurchaseHistory" : {
+         "Year1" : {
+            "OrderId" : 1,
+            "price" : "$2100.00",
+            "PurchaseNumber" : 600
+         },
+
+         "Year2" : {
+            "OrderId" : 2,
+            "price" : "$1800.00",
+            "PurchaseNumber" : 900
+         }
+
+      },
+
+      "id": 1
+   },
+   
+   "IoTDevice2" : {
+      "DeviceName" : "medical sensors",
+      "use" : "Sensors continue to enable people ­– from medical professionals to patients – the ability to monitor and track medical conditions.",
+      "PurchaseHistory" : {
+         "Year1" : {
+            "OrderId" : 1,
+            "price" : "$5900.00",
+            "PurchaseNumber" : 50
+         },
+
+         "Year2" : {
+            "OrderId" : 2,
+            "price" : "$4800.00",
+            "PurchaseNumber" : 100
+         }
+
+      },
+
+      "id": 2
+   },
+   
+   "IoTDevice3" : {
+      "DeviceName" : "smart door lock",
+      "use" : "Once installed and paired via Bluetooth with your smartphone, a smart lock can be locked and unlocked without a key.",
+      "PurchaseHistory" : {
+         "Year1" : {
+            "OrderId" : 1,
+            "price" : "$500.00",
+            "PurchaseNumber" : 5100
+         },
+
+         "Year2" : {
+            "OrderId" : 2,
+            "price" : "$350.00",
+            "PurchaseNumber" : 12000
+         }
+
+      },
+
+      "id": 3
+   }
+}

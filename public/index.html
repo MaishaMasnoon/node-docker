@@ -1,0 +1,261 @@
+<html>
+	<head>
+<style>
+table, th, td {
+  border: 1px solid black;
+}
+</style>
+</head>
+	<body style="background-color: skyblue">
+		<!--<h1>Brief History of IoT Devices</h1>
+		<h2>A collection of records</h2>-->
+		<div id="division1">
+			<table>
+			  <tr>
+			    <th>DeviceName</th>
+			    <th>use</th>
+			    <th>OrderId</th>
+			    <th>price</th>
+			    <th>PurchaseNumber</th>
+			    <th>OrderId</th>
+			    <th>price</th>
+			    <th>PurchaseNumber</th>
+			    <th>id</th>
+			  </tr>
+			  <tr>
+			    <td><p id="demo1R"></p></td>
+			    <td><p id="demo2R"></p></td>
+			    <td><p id="demo3R"></p></td>
+			    <td><p id="demo5R"></p></td>
+			    <td><p id="demo7R"></p></td>
+			    <td><p id="demo4R"></p></td>
+			    <td><p id="demo6R"></p></td>
+			    <td><p id="demo8R"></p></td>
+			    <td><p id="demo9R"></p></td>
+			  </tr>
+			  <tr>
+			    <td><p id="demo1R1"></p></td>
+			    <td><p id="demo2R1"></p></td>
+			    <td><p id="demo3R1"></p></td>
+			    <td><p id="demo5R1"></p></td>
+			    <td><p id="demo7R1"></p></td>
+			    <td><p id="demo4R1"></p></td>
+			    <td><p id="demo6R1"></p></td>
+			    <td><p id="demo8R1"></p></td>
+			    <td><p id="demo9R1"></p></td>
+			  </tr>
+			  <tr>
+			    <td><p id="demo1R2"></p></td>
+			    <td><p id="demo2R2"></p></td>
+			    <td><p id="demo3R2"></p></td>
+			    <td><p id="demo5R2"></p></td>
+			    <td><p id="demo7R2"></p></td>
+			    <td><p id="demo4R2"></p></td>
+			    <td><p id="demo6R2"></p></td>
+			    <td><p id="demo8R2"></p></td>
+			    <td><p id="demo9R2"></p></td>
+			  </tr>
+			  
+			</table>
+		</div>
+		<button onclick="allRecords()">Collection of IoT Devices</button>
+		<!--<h2>A single record that corresponds to an ID</h2>-->
+		<div id="division2">
+			<table>
+			  <tr>
+			    <th>DeviceName</th>
+			    <th>use</th>
+			    <th>OrderId</th>
+			    <th>price</th>
+			    <th>PurchaseNumber</th>
+			    <th>OrderId</th>
+			    <th>price</th>
+			    <th>PurchaseNumber</th>
+			    <th>id</th>
+			  </tr>
+			  <tr>
+			    <td><p id="demo1"></p></td>
+			    <td><p id="demo2"></p></td>
+			    <td><p id="demo3"></p></td>
+			    <td><p id="demo5"></p></td>
+			    <td><p id="demo7"></p></td>
+			    <td><p id="demo4"></p></td>
+			    <td><p id="demo6"></p></td>
+			    <td><p id="demo8"></p></td>
+			    <td><p id="demo9"></p></td>
+			  </tr>
+			</table>
+		</div>
+		<button onclick="myFunction1()">IoT Device corresponds to an ID</button>
+		<!--<h2>A collection of records for a given entity</h2>-->
+		<div style="display: block;" id="division3">
+			
+			<table>
+			  <tr>
+			    <th>OrderId</th>
+			    <th>price</th>
+			    <th>PurchaseNumber</th>
+			    <th>OrderId</th>
+			    <th>price</th>
+			    <th>PurchaseNumber</th>
+			  </tr>
+			  <tr>
+			    <td><p id="hstry1"></p></td>
+			    <td><p id="hstry2"></p></td>
+			    <td><p id="hstry3"></p></td>
+			    <td><p id="hstry4"></p></td>
+			    <td><p id="hstry5"></p></td>
+			    <td><p id="hstry6"></p></td>
+			  </tr>
+			</table>
+		</div>
+		<button onclick="myFunction2()">Purchase History for an IoT</button>
+		<!--<h2>A single record from a collection of a given entity</h2>-->
+		<div style="display: block;" id="division4">
+			
+			<table>
+			  <tr>
+			    <th>OrderId</th>
+			    <th>price</th>
+			    
+			  </tr>
+			  <tr>
+			    <td><p id="GivenEntity1"></p></td>
+			    <td><p id="GivenEntity2"></p></td>
+			    
+			  </tr>
+			</table>
+		</div>
+		<button onclick="myFunction3()">Price of an IoT device in a specific year</button>
+
+<script>
+	function allRecords() {
+	  fetch("http://127.0.0.1:8081/IoTDeviceList").then(res => res.json())
+	  .then(data => {console.log(data)
+
+	  	const nameR = data.IoTDevice1.DeviceName;
+	  	const useR = data.IoTDevice1.use;
+	  	const pHY1R = data.IoTDevice1.PurchaseHistory.Year1.OrderId;
+	  	const pHY2R = data.IoTDevice1.PurchaseHistory.Year2.OrderId;
+	  	const pHY1PriceR = data.IoTDevice1.PurchaseHistory.Year1.price;
+	  	const pHY2PriceR = data.IoTDevice1.PurchaseHistory.Year2.price;
+	  	const pHY1PurR = data.IoTDevice1.PurchaseHistory.Year1.PurchaseNumber;
+	  	const pHY2PurR = data.IoTDevice1.PurchaseHistory.Year2.PurchaseNumber;
+	  	const IDR = data.IoTDevice1.id;
+
+	  	const nameR1 = data.IoTDevice2.DeviceName;
+	  	const useR1 = data.IoTDevice2.use;
+	  	const pHY1R1 = data.IoTDevice2.PurchaseHistory.Year1.OrderId;
+	  	const pHY2R1 = data.IoTDevice2.PurchaseHistory.Year2.OrderId;
+	  	const pHY1PriceR1 = data.IoTDevice2.PurchaseHistory.Year1.price;
+	  	const pHY2PriceR1 = data.IoTDevice2.PurchaseHistory.Year2.price;
+	  	const pHY1PurR1 = data.IoTDevice2.PurchaseHistory.Year1.PurchaseNumber;
+	  	const pHY2PurR1 = data.IoTDevice2.PurchaseHistory.Year2.PurchaseNumber;
+	  	const IDR1 = data.IoTDevice2.id;
+
+	  	const nameR2 = data.IoTDevice3.DeviceName;
+	  	const useR2 = data.IoTDevice3.use;
+	  	const pHY1R2 = data.IoTDevice3.PurchaseHistory.Year1.OrderId;
+	  	const pHY2R2 = data.IoTDevice3.PurchaseHistory.Year2.OrderId;
+	  	const pHY1PriceR2 = data.IoTDevice3.PurchaseHistory.Year1.price;
+	  	const pHY2PriceR2 = data.IoTDevice3.PurchaseHistory.Year2.price;
+	  	const pHY1PurR2 = data.IoTDevice3.PurchaseHistory.Year1.PurchaseNumber;
+	  	const pHY2PurR2 = data.IoTDevice3.PurchaseHistory.Year2.PurchaseNumber;
+	  	const IDR2 = data.IoTDevice3.id;
+
+	  	document.getElementById("demo1R").textContent = nameR; 
+	  	document.getElementById("demo2R").textContent = useR;
+	  	document.getElementById("demo3R").textContent = pHY1R; 
+	  	document.getElementById("demo4R").textContent = pHY2R;
+	  	document.getElementById("demo5R").textContent = pHY1PriceR; 
+	  	document.getElementById("demo6R").textContent = pHY2PriceR;
+	  	document.getElementById("demo7R").textContent = pHY1PurR; 
+	  	document.getElementById("demo8R").textContent = pHY2PurR;
+	  	document.getElementById("demo9R").textContent = IDR;
+
+	  	document.getElementById("demo1R1").textContent = nameR1; 
+	  	document.getElementById("demo2R1").textContent = useR1;
+	  	document.getElementById("demo3R1").textContent = pHY1R1; 
+	  	document.getElementById("demo4R1").textContent = pHY2R1;
+	  	document.getElementById("demo5R1").textContent = pHY1PriceR1; 
+	  	document.getElementById("demo6R1").textContent = pHY2PriceR1;
+	  	document.getElementById("demo7R1").textContent = pHY1PurR1; 
+	  	document.getElementById("demo8R1").textContent = pHY2PurR1;
+	  	document.getElementById("demo9R1").textContent = IDR1;
+
+	  	document.getElementById("demo1R2").textContent = nameR2; 
+	  	document.getElementById("demo2R2").textContent = useR2;
+	  	document.getElementById("demo3R2").textContent = pHY1R2; 
+	  	document.getElementById("demo4R2").textContent = pHY2R2;
+	  	document.getElementById("demo5R2").textContent = pHY1PriceR2; 
+	  	document.getElementById("demo6R2").textContent = pHY2PriceR2;
+	  	document.getElementById("demo7R2").textContent = pHY1PurR2; 
+	  	document.getElementById("demo8R2").textContent = pHY2PurR2;
+	  	document.getElementById("demo9R2").textContent = IDR2;
+	  	
+	  }
+	  );
+	}
+	function myFunction1() {
+	  fetch("http://127.0.0.1:8081/id").then(res => res.json())
+	  .then(data => {console.log(data)
+
+	  	const name = data.DeviceName;
+	  	const use = data.use;
+	  	const pHY1 = data.PurchaseHistory.Year1.OrderId;
+	  	const pHY2 = data.PurchaseHistory.Year2.OrderId;
+	  	const pHY1Price = data.PurchaseHistory.Year1.price;
+	  	const pHY2Price = data.PurchaseHistory.Year2.price;
+	  	const pHY1Pur = data.PurchaseHistory.Year1.PurchaseNumber;
+	  	const pHY2Pur = data.PurchaseHistory.Year2.PurchaseNumber;
+	  	const ID = data.id;
+
+	  	document.getElementById("demo1").textContent = name; 
+	  	document.getElementById("demo2").textContent = use;
+	  	document.getElementById("demo3").textContent = pHY1; 
+	  	document.getElementById("demo4").textContent = pHY2;
+	  	document.getElementById("demo5").textContent = pHY1Price; 
+	  	document.getElementById("demo6").textContent = pHY2Price;
+	  	document.getElementById("demo7").textContent = pHY1Pur; 
+	  	document.getElementById("demo8").textContent = pHY2Pur;
+	  	document.getElementById("demo9").textContent = ID;
+	  }
+	  );
+	}
+  	function myFunction2(){
+	  fetch("http://127.0.0.1:8081/id/history").then(res => res.json())
+	  .then(data => {console.log(data)
+
+	  	const pHY1 = data.Year1.OrderId;
+	  	const pHYP1 = data.Year1.price;
+	  	const pHY2 = data.Year2.OrderId;
+	  	const pHYP2 = data.Year2.price;
+	  	const pHY1Pur = data.Year1.PurchaseNumber;
+		const pHY2Pur = data.Year2.PurchaseNumber;
+	  	
+	  	document.getElementById("hstry1").textContent = pHY1; 
+	  	document.getElementById("hstry2").textContent = pHYP1;
+	  	document.getElementById("hstry3").textContent = pHY1Pur; 
+	  	document.getElementById("hstry4").textContent = pHY2;
+	  	document.getElementById("hstry5").textContent = pHYP2; 
+	  	document.getElementById("hstry6").textContent = pHY2Pur;
+	  }
+	  );
+	}
+	function myFunction3(){
+		fetch("http://127.0.0.1:8081/CollectionOfGivenEntity").then(res => res.json())
+	  .then(data => {console.log(data)
+
+	  	const pHY = data.OrderId;
+	  	const pHYP = data.price;
+	  	const pHYPur = data.PurchaseNumber;
+
+	  	document.getElementById("GivenEntity1").textContent = pHY; 
+	  	document.getElementById("GivenEntity2").textContent = pHYP;
+	  	document.getElementById("GivenEntity3").textContent = pHYPur; 
+	  }
+	  );
+	} 
+</script>
+	</body>
+</html>
