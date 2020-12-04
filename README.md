@@ -3,7 +3,7 @@ requiremetns:
 Node.js version 12.18 or later.
 Download and install Docker Desktop, if you don't have it already.
 
-The application that  have created displays data from a JASON data model which contains a list of IoT device records. I have defined four different endpoint to pull data from.
+The application that I have created displays data from a JASON data model which contains a list of IoT device records. I have defined four different endpoint to pull data from.
 the endpoints are 
 /IoTDeviceList
 /IoTDeviceList/id
