@@ -13,7 +13,7 @@ the endpoints are
 Setting up the docker container:
 Download the node-docker repository
 Go to the directory that you have downloaded
-Open the command promt and the run the command "npm insall" to install the dependencies
+Open the command promt and the run the command "npm install" to install the dependencies
 Also run "npm install express --save" to install the express and save it in the dependencies list
 Then you can run "node server.js" to see if the server is working
 
